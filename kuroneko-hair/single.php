@@ -14,9 +14,13 @@
                             <?php the_title(); ?>
                         </h1>
                         <div class="content-Meta">
-                            <a href="#">キャンペーン</a>
-                            <a href="#" class="content-Meta_Date">
-                                <time datetime="2021-03-12">2021年3月12日</time>
+                            <?php the_category(', '); ?>
+                            <?php
+                              $neko_post_year = get_the_date('Y');
+                              $neko_post_month = get_the_date('m');
+                            ?>
+                            <a href="<?php echo get_month_link($neko_post_year, $neko_post_month); ?>" class="content-Meta_Date">
+                                <time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date(); ?></time>
                             </a>
                         </div>
                     </header>
@@ -29,10 +33,7 @@
                         <?php the_content(); ?>
                     </div>
                     <footer class="content-Footer">
-                        <ul class="content-Tags" aria-label="タグ">
-                            <li><a href="#">ご予約</a></li>
-                            <li><a href="#">雨の日</a></li>
-                        </ul>
+                        <?php the_tags('<ul class="content-Tags" aria-label="タグ"><li>', '</li><li>', '</li></ul>'); ?>
                         <nav class="content-Nav" aria-label="前後の記事">
                             <div class="content-Nav_Prev">
                                 &lt; <a href="#">前のページタイトル</a>
