@@ -55,3 +55,10 @@ function neko_widgets_init() {
   );
 }
 add_action('widgets_init', 'neko_widgets_init');
+
+function neko_block_setup() {
+  add_theme_support('wp-block-styles');
+  add_theme_support('responsive-embeds');
+  add_theme_support('align-wide');
+}
+add_action('after_setup_theme', 'neko_block_setup');
