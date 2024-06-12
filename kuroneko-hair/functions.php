@@ -60,5 +60,68 @@ function neko_block_setup() {
   add_theme_support('wp-block-styles');
   add_theme_support('responsive-embeds');
   add_theme_support('align-wide');
+  add_theme_support(
+    'editor-color-palette',
+    array(
+      array(
+        'name' => 'スカイブルー',
+        'slug' => 'skyblue',
+        'color' => '#00a1c6',
+      ),
+      array(
+        'name' => 'ライトスカイブルー',
+        'slug' => 'light-skyblue',
+        'color' => '#ecf5f7',
+      ),
+      array(
+        'name' => 'ライトグレー',
+        'slug' => 'light-gray',
+        'color' => '#f7f6f5',
+      ),
+      array(
+        'name' => 'グレー',
+        'slug' => 'gray',
+        'color' => '#767268',
+      ),
+      array(
+        'name' => 'ダークグレー',
+        'slug' => 'dark-gray',
+        'color' => '#43413b',
+      ),
+    ),
+  );
+  add_theme_support(
+    'editor-font-sizes',
+    array(
+      array(
+        'name' => '極小',
+        'size' => '14',
+        'slug' => 'x-small',
+      ),
+      array(
+        'name' => '小',
+        'size' => '16',
+        'slug' => 'small',
+      ),
+      array(
+        'name' => '標準',
+        'size' => '18',
+        'slug' => 'normal',
+      ),
+      array(
+        'name' => '大',
+        'size' => '24',
+        'slug' => 'large',
+      ),
+      array(
+        'name' => '特大',
+        'size' => '36',
+        'slug' => 'huge',
+      ),
+    ),
+  );
+  add_theme_support('editor-styles');
+  add_editor_style('assets/css/editor-styles.css');
+  add_editor_style('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
 }
 add_action('after_setup_theme', 'neko_block_setup');
